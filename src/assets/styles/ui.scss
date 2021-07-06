@@ -1,0 +1,15 @@
+.lw__ui {
+    &-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-field {
+            padding: 0.5em 0;
+            margin: 0 0.5em;
+            border-bottom: 1px solid $InputBorderColor;
+            outline: none;
+            width: 80%;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+// ================
+// Transition 
+// ================
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.75s ease-out;
+}
+
+
+.slide-enter-to {
+  position: absolute;
+  right: 0;
+}
+
+
+.slide-enter-from {
+  position: absolute;
+  right: -100%;
+}
+
+
+.slide-leave-to {
+  position: absolute;
+  left: -100%;
+}
+
+
+.slide-leave-from {
+  position: absolute;
+  left: 0;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active for <2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
+// ================
+// End Transition
+// ================
+
+// ====================
+//  main class lw
+// ====================
+.lw {
+    &-main {
+        &-logo {
+            transition: all .4s ease-in-out;
+            font-family: 'Roboto Mono', monospace;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            min-width: 212px;
+        }
+    }
+
+    &-spaser{
+        &-hor {
+            margin: 1em 0;
+        }
+        &-ver {
+            margin: 0 1em;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+// ========================= 
+//  Fonts 
+// =========================
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;600&display=swap');
+
+// ==========
+// Variables
+// ==========
+
+@import './variables.scss';
+
+// ============
+// Components 
+// ============
+
+@import './modal.scss';
+@import './ui.scss';
+
+// ==========
+// pages
+// ==========
+
+@import "./main.scss";
+
+
