@@ -40,7 +40,7 @@
       content-class="modal-content"
       name="authmodal"
     >
-        <div class="modal__content">
+        <div class="modal__content" style="max-width: 452px">
             <button class="modal__close" @click="closeModal">
               X
             </button>
@@ -80,6 +80,48 @@
 
         </div>
     </vue-final-modal>
+
+    <vue-final-modal
+      v-model="showSignUpModal"
+      @click-outside="clickOutside"
+      @cancel="showSignUpModal = false"
+      classes="modal-container"
+      content-class="modal-content"
+      name="signupmodal"
+    >
+        <div class="modal__content" style="max-width: 452px">
+            <button class="modal__close" @click="showSignUpModal = false">
+              X
+            </button>
+            <span class="modal__title">Sign Up</span>
+
+            <hr>
+
+            <lw-input key="input-email" v-model="register.email" label="Email"/>
+            <lw-input key="input-username" v-model="register.username" label="Username"/>
+            <lw-input key="input-password" v-model="register.password" label="Password"/>
+            <lw-input key="input-repeatPassword" v-model="register.repeatPassword" label="Confirm password"/>
+            
+            <div class="lw-spaser-hor"></div>
+
+            <div class="modal__btn">
+                <v-btn 
+                    flat
+                    color="primary"
+                    @click="openModal()"
+                >
+                  Back to Log in
+                </v-btn>
+                <v-btn
+                    color="info"
+                    @click="openSignUpModal()"
+                >
+                    Sign up
+                </v-btn>
+            </div>
+        </div>
+    </vue-final-modal>
+
 </template>
 <script>
 import lwInput from './ui/lw-input.vue'
@@ -112,6 +154,13 @@ export default {
             loginForm: {
                 login: undefined,
                 password: undefined
+            },
+
+            register: {
+              email: undefined,
+              username: undefined,
+              password: undefined,
+              repeatPassword: undefined,
             }
        }
    },
@@ -126,12 +175,14 @@ export default {
 
         openModal () {
             this.showAuthModal = true
+           this.showSignUpModal = false
             this.$vfm.show('authmodal')
         },
 
         openSignUpModal () {
            this.showAuthModal = false
            this.showSignUpModal = true
+            this.$vfm.show('signupmodal')
         },
 
         btnAsLink (payload) {

@@ -10,19 +10,19 @@
         </transition>
       </router-view>
     </v-main>
-    <v-footer app>
-    <!-- -->
-  </v-footer>
+    <lw-footer/>
   </v-app>
 </template>
 
 <script>
 import lwHeader from './components/lw-header.vue'
+import lwFooter from './components/lw-footer.vue'
 
 export default {
   name: 'App',
   components: {
-    'lw-header': lwHeader
+    'lw-header': lwHeader,
+    'lw-footer': lwFooter
   },
   data: () => ({
       
