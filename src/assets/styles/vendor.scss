@@ -17,11 +17,17 @@
 
 @import './modal.scss';
 @import './ui.scss';
+@import './header-footer.scss';
 
 // ==========
 // pages
 // ==========
 
 @import "./main.scss";
+@import "./auth.scss";
 
+// ==========
+// Native elements
+// ========== 
 
+@import "./native-el.scss";

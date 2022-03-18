@@ -1,17 +1,11 @@
 <template>
-  <div>
-    <HelloWorld/>
+  <div class="home">
+    <img alt="Vue logo" src="@/assets/logo.png">
   </div>
 </template>
 
-<script>
-import HelloWorld from '../components/HelloWorld.vue';
-
+<script lang="ts">
 export default {
-  name: 'Home',
-  
-  components: {
-    HelloWorld,
-  },
-};
+
+}
 </script>

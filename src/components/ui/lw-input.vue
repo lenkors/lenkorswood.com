@@ -21,16 +21,16 @@ export default {
             type: String
         },
         latin:{
-        type: Boolean,
-        required: false
+            type: Boolean,
+            required: false
         },
         value: {
-          type: String,
-          required: false
+            type: String,
+            required: false
         },
         required: {
-          type: Boolean,
-          default: false
+            type: Boolean,
+            default: false
         },
         label: {
             type: String

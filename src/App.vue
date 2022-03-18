@@ -1,15 +1,13 @@
 <template>
   <v-app>
-     <!-- <v-navigation-drawer app>
-    </v-navigation-drawer> -->
     <lw-header/>
-    <v-main>
+    <main>
       <router-view v-slot="{ Component }">
         <transition name="slide">
           <component :is="Component" />
         </transition>
       </router-view>
-    </v-main>
+    </main>
     <lw-footer/>
   </v-app>
 </template>
