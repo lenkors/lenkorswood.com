@@ -1,21 +1,27 @@
-.lw__ui {
-    &-input {
+.lw {
+    &-wrapper-input {
         display: grid;
-        grid-template-columns: 1fr 2fr;
-        // justify-content: space-between;
-        // align-items: center;
-        &-label {
-            display: flex;
-            align-items: center;
-            // justify-content: center;
+        grid-template-columns: 1fr 4fr;
+        padding: 0.5em 1em;
+    }
+    &-input {
+        width: 100%;
+        border-bottom: 0.5px solid $inputBorderColor;
+        transition: all .4s ease-in-out;
+        &:hover {
+            border-bottom: 0.5px solid darken($color: $inputBorderColor, $amount: 20);
         }
-
-        &-field {
-            padding: 0.5em 0;
-            margin: 0 0.5em;
-            border-bottom: 1px solid $InputBorderColor;
+        &.error {
+            border-bottom: 0.5px solid $inputBorderError;
+        }
+        &.error:hover {
+            border-bottom: 0.5px solid darken($color: $inputBorderError, $amount: 20);
+        }
+        &:focus {
             outline: none;
-            width: 80%;
+        }
+        .wth-50 {
+            width: 50%;
         }
     }
 }
