@@ -24,6 +24,7 @@
 
         <div class="lw-btn_auth-wrapper">
           <v-btn
+            v-show="isShowLoginBtn"
             color="primary"
             elevation="2"
             fab
@@ -66,17 +67,7 @@ export default {
                     link: '/about'
                 },
             ],
-            loginForm: {
-                login: undefined,
-                password: undefined
-            },
-
-            register: {
-              email: undefined,
-              username: undefined,
-              password: undefined,
-              repeatPassword: undefined,
-            }
+            isShowLoginBtn: true
        }
    },
    methods: {
@@ -91,7 +82,10 @@ export default {
         // let index = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
         // this.nameLogo = this.logosNames[index]
     }, 5000) 
-    
+  },
+  updated () {
+    if (window.location === '/login') this.isShowLoginBtn = false
+    else this.isShowLoginBtn = true
   }
 }
 </script>
