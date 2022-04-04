@@ -40,7 +40,7 @@
                 </v-btn>
             </div>
             <div class="auth-card-special__footer social-btns">
-                <h3 class="first-sec-fluid">Auth with:</h3>
+                <h3 class="first-sec-fluid">Auth with:</h3>asdasdasdasd
                 <v-btn
                     v-for="(icon, index) in authWithSocials"
                     :key="index"
