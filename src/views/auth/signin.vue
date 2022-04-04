@@ -39,6 +39,7 @@
                 Restore password
                 </v-btn>
             </div>
+            <!-- on master -->
             <div class="auth-card-special__footer social-btns">
                 <h3 class="first-sec-fluid">Auth with:</h3>
                 <v-btn
