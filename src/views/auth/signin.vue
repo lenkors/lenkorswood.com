@@ -42,6 +42,7 @@
             <!-- on master -->
             <div class="auth-card-special__footer social-btns">
                 <h3 class="first-sec-fluid">Auth with:</h3>
+                <!-- TODO test data -->
                 <v-btn
                     v-for="(icon, index) in authWithSocials"
                     :key="index"
