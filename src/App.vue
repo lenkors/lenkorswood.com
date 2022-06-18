@@ -1,38 +1,17 @@
 <template>
-  <v-app>
-    <lw-header/>
-    <main>
-      <router-view v-slot="{ Component }">
-        <transition name="slide">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </main>
-    <lw-footer/>
-  </v-app>
+  <app-header/>
+  <router-view class="main__wrapper"/>
+  <app-footer/>
 </template>
 
-<script>
-import lwHeader from './components/lw-header.vue'
-import lwFooter from './components/lw-footer.vue'
-
-export default {
-  name: 'App',
-  components: {
-    'lw-header': lwHeader,
-    'lw-footer': lwFooter
-  },
-  data: () => ({
-      
-  }),
-  watch: {
-    '$route' (to, from) {
-      const toDepth = to.path.split('/').length
-      const fromDepth = from.path.split('/').length
-      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-    }
-  },
-
-
+<style lang="scss">
+.main__wrapper {
+  padding: 1em 5em;
+  height: 100%;
 }
-</script>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>

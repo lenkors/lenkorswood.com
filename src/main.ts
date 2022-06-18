@@ -1,41 +1,27 @@
 import { createApp } from 'vue';
-import vuetify from './plugins/vuetify';
 import App from './App.vue';
+import './registerServiceWorker';
+import { createPinia } from 'pinia';
 import router from './router';
-import store from './store';
-import VueFinalModal from 'vue-final-modal';
-import svgBase from './components/ui/svgBase.vue';
-import textWrapper from './components/ui/textWrapper.vue';
-import Toast, {POSITION, PluginOptions} from "vue-toastification";
-// Style
-import './assets/styles/vendor.scss';
-import 'aos/dist/aos.css';
-import "vue-toastification/dist/index.css";
 
-const app = createApp(App)
-
-const toastOptions: PluginOptions = {
-    position: POSITION.TOP_RIGHT
-    // You can set your default options here
-};
-
-// Packages
-
-app.use(VueFinalModal(), { 
-    componentName: 'VueFinalModal',
-    key: '$vfm',    
-    dynamicContainerName: 'ModalsContainer'
-})
-app.use(vuetify)
-app.use(Toast, toastOptions);
+// Tailwind + global style
+import './assets/tailwind.css';
+// Tailwind -- end --
 
 
-// Components
+// Main UI components
 
-app.component('svg-base', svgBase)
-app.component('text-wrapper', textWrapper)
+import AppHeader from './components/UI/AppHeader.vue';
+import AppFooter from './components/UI/AppFooter.vue';
 
+// Main UI -- end --
 
-app.use(router)
-app.use(store)
-app.mount('#app') 
+const pinia = createPinia();
+const app = createApp(App);
+app.use(pinia);
+app.use(router);
+
+app.component('app-header', AppHeader);
+app.component('app-footer', AppFooter);
+
+app.mount('#app');
