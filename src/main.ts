@@ -1,13 +1,9 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import './registerServiceWorker';
 import { createPinia } from 'pinia';
 import router from './router';
 
-// Tailwind + global style
-import './assets/tailwind.css';
-// Tailwind -- end --
-
+import './index.css'
 
 // Main UI components
 

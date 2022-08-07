@@ -34,15 +34,18 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-
-@Options({
+import { ref } from 'vue-demi'
+export default {
   props: {
     msg: String
+  },
+  setup() {
+    const msg = ref();
+    return {
+      msg 
+    }
   }
-})
-export default class HelloWorld extends Vue {
-  msg!: string
+  
 }
 </script>
 

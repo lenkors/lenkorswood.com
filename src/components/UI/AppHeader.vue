@@ -1,5 +1,5 @@
 <template>
-    <header class="app-header">
+    <header class="py-8 app-header">
         <div class="app-header-title">
             {{headerTitle}}
         </div>
